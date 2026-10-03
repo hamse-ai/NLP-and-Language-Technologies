@@ -9,9 +9,9 @@ The task itself is simple to state: classify vaccine-related tweets as Negative 
 
 **GitHub repository:** https://github.com/hamse-ai/NLP-and-Language-Technologies
 
-**Demo video (7-10 min):** [INSERT DEMO VIDEO LINK]
+**Demo video:** 
 
-**Group contribution tracker:** [INSERT CONTRIBUTION TRACKER LINK]
+**Group contribution tracker:** 
 
 ## Project structure
 ```
