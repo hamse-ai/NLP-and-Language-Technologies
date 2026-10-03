@@ -1,0 +1,10 @@
+{
+  "unigram_only": {
+    "vocab_size": 5479,
+    "macro_f1": 0.6591598950363924
+  },
+  "unigram_bigram": {
+    "vocab_size": 18431,
+    "macro_f1": 0.6746732099031744
+  }
+}
