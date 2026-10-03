@@ -1,0 +1,9 @@
+{
+  "from_scratch": {
+    "macro_f1": 0.6419883818120347
+  },
+  "glove_pretrained": {
+    "macro_f1": 0.640364690923831
+  },
+  "vocab_coverage": 0.632956658561007
+}
