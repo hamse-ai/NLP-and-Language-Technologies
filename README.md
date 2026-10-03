@@ -11,7 +11,7 @@ The task itself is simple to state: classify vaccine-related tweets as Negative 
 
 **Demo video**: *https://youtu.be/VTsgU0uB_iE* 
 
-**Group contribution tracker:** 
+**Group contribution tracker**:*https://docs.google.com/spreadsheets/d/16V03sQEDXhCKfPG21ncNyXhfyXinqWvNGYNamQ_kROM/edit?gid=0#gid=0* 
 
 ## Project structure
 ```
