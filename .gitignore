@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+*.pt
+*.bin
+model_weights/
+reports/results/distilbert_train_progress.json
+data/glove.twitter.27B.*.txt
