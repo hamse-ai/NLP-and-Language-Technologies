@@ -38,6 +38,8 @@ class Attention(nn.Module):
     def forward(self, gru_out, mask):
         # gru_out: (B, T, H), mask: (B, T) with 1 for real tokens, 0 for padding
         scores = self.attn(gru_out).squeeze(-1)  # (B, T)
+        # Mask padding positions to -inf so softmax assigns them zero weight,
+        # preventing the model from attending to pad tokens.
         scores = scores.masked_fill(mask == 0, float("-inf"))
         weights = torch.softmax(scores, dim=1).unsqueeze(-1)  # (B, T, 1)
         context = (gru_out * weights).sum(dim=1)  # (B, H)
@@ -45,6 +47,14 @@ class Attention(nn.Module):
 
 
 class CNNBiGRUAttention(nn.Module):
+    """Hybrid CNN + BiGRU + Attention model (Approach 4).
+
+    Pipeline: Embedding -> parallel 1D convolutions (Kim, 2014) for local
+    n-gram features -> bidirectional GRU (Cho et al., 2014) for sequential
+    context -> additive attention (Bahdanau et al., 2015) to pool into a
+    fixed-length context vector -> dropout -> linear classifier.
+    """
+
     def __init__(
         self,
         vocab_size,
@@ -72,6 +82,8 @@ class CNNBiGRUAttention(nn.Module):
         mask = (x != self.pad_idx).float()
         emb = self.embedding(x).transpose(1, 2)  # (B, E, T)
         conv_outs = [torch.relu(conv(emb)) for conv in self.convs]  # each (B, F, T')
+        # Align conv output lengths (different kernel sizes can produce slightly
+        # different sequence lengths even with padding=k//2).
         min_len = min(c.size(2) for c in conv_outs)
         conv_outs = [c[:, :, :min_len] for c in conv_outs]
         cnn_feat = torch.cat(conv_outs, dim=1).transpose(1, 2)  # (B, T', F*len)
