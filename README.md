@@ -33,15 +33,10 @@ The task itself is simple to state: classify vaccine-related tweets as Negative 
 │   ├── Formative2_Report.pdf     # Generated locally; PDF artifacts are not committed
 │   ├── results/                  # Per-model metrics as JSON (macro-F1, confusion matrix, ...)
 │   │   └── ablations/            # Ablation-experiment results (notebooks/ablation_experiments.ipynb)
-│   ├── contribution_tracker.docx # Group contribution tracker (team, task allocation, meeting log)
-│   └── demo_video_script.md      # Talking-points script for the 7-10 min demo video
-├── scripts/
-│   └── build_pdf.py              # Rebuilds reports/Formative2_Report.pdf from report.md
 ├── src/                         # Shared preprocessing, datasets, models, training/eval code
 ├── NLP_Primer_twitter_challenge.ipynb   # Reference-only starter notebook from the original
 │                                         # Zindi hackathon (fastai/simpletransformers) — not
 │                                         # one of our 5 approaches, not executed/graded by us
-├── Formative 2_sep 2026.pdf   # Assignment brief
 └── requirements.txt
 ```
 
