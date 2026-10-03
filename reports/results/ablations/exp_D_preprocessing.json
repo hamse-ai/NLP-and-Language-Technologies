@@ -1,0 +1,10 @@
+{
+  "raw_uncleaned": {
+    "vocab_size": 18505,
+    "macro_f1": 0.6754879879879879
+  },
+  "our_preprocessing": {
+    "vocab_size": 18431,
+    "macro_f1": 0.6746732099031744
+  }
+}
