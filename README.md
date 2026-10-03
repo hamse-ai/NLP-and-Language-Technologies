@@ -8,7 +8,9 @@ Our question: how well do sequential modelling approaches actually hold up on a 
 The task itself is simple to state: classify vaccine-related tweets as Negative (-1), Neutral (0), or Positive (1).
 
 **GitHub repository:** https://github.com/hamse-ai/NLP-and-Language-Technologies
+
 **Demo video (7-10 min):** [INSERT DEMO VIDEO LINK]
+
 **Group contribution tracker:** [INSERT CONTRIBUTION TRACKER LINK]
 
 ## Project structure
